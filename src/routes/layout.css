@@ -14,3 +14,8 @@ body, html {
   height: 100%;
   overflow: hidden;
 }
+
+.bg-slate-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}

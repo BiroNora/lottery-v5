@@ -69,7 +69,7 @@
 
 {#if is_menu_open}
   <nav
-    class="font-poppins absolute top-12 z-40 flex w-full origin-top flex-col justify-center bg-slate-500/80 py-8 text-4xl text-white"
+    class="font-poppins absolute top-12 z-40 flex w-full origin-top flex-col justify-center bg-slate-500/90 py-8 text-4xl text-white"
     aria-label="mobile"
   >
     <ul class="flex min-h-screen flex-col items-center">

@@ -17,6 +17,7 @@ model Five {
   f_fourth Int
   f_fifth  Int
 
+  @@index([f_first, f_second, f_third, f_fourth, f_fifth])
   @@map("five")
 }
 
@@ -32,6 +33,7 @@ model Six {
   s_fifth  Int
   s_sixth  Int
 
+  @@index([s_first, s_second, s_third, s_fourth, s_fifth, s_sixth])
   @@map("six")
 }
 
@@ -55,5 +57,7 @@ model Skandi {
   h_sixth   Int
   h_seventh Int
 
+  @@index([m_first, m_second, m_third, m_fourth, m_fifth, m_sixth, m_seventh])
+  @@index([h_first, h_second, h_third, h_fourth, h_fifth, h_sixth, h_seventh])
   @@map("skandi")
 }
