@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* 1. Definiáljuk a Poppins-t a Tailwind v4 @theme blokkjában */
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* 2. Kényszerítsük az alapértelmezett betűtípust az egész oldalra */
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
