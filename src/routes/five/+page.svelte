@@ -147,11 +147,11 @@
 		appearance: textfield;
 	}
 
-	/* .lotto-ball {
+	.lotto-ball {
 		aspect-ratio: 1 / 1;
 		height: 4rem;
 		width: 4rem;
-		border-radius: 9999px; /* rounded-full
+		border-radius: 9999px; /* rounded-full*/
 		text-align: center;
 		font-weight: bold;
 		color: white !important;
@@ -160,49 +160,25 @@
 		border: none;
 		color-scheme: light !important;
 
-		background:
-			radial-gradient(circle at 32% 32%, rgba(173, 242, 90, 0.6) 0%, rgba(173, 242, 90, 0.1) 35%),
+		background:radial-gradient(
+        circle at 32% 32%,
+        rgba(215, 255, 150, 0.9) 0%,   /* Világos mohazöld, magas opacity */
+        rgba(116, 134, 88, 0) 45%     /* Teljesen átlátszóba fut ki */
+      ),
+			/* radial-gradient(circle at 32% 32%, rgba(173, 242, 90, 0.6) 0%, rgba(173, 242, 90, 0.1) 35%),*/
 			radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%) !important;
 		background-color: transparent !important;
 		color: white !important;
 
 		box-shadow:
-			inset -3px -3px 10px rgba(0, 0, 0, 0.4),
-			5px 10px 20px rgba(0, 0, 0, 0.3);
+			inset -3px -3px 10px rgba(0, 0, 0, 0.2),
+			5px 10px 20px rgba(0, 0, 0, 0.2);
 
 		-webkit-appearance: none;
 		-moz-appearance: textfield;
 		appearance: none;
-	} */
-	 .lotto-ball {
-  aspect-ratio: 1 / 1;
-		height: 4rem;
-		width: 4rem;
-		border-radius: 9999px;
-		text-align: center;
-		font-weight: bold;
-		color: white !important;
-		transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		outline: none;
-		border: none;
-		color-scheme: light !important;
-  position: relative; /* Kell az utóelemnek */
-  overflow: hidden;
-  background: radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%) !important;
-  color-scheme: light;
-}
+	}
 
-/* Külön rétegre tesszük a csillanást, amit nem tud sötétíteni a rendszer */
-.lotto-ball::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 32% 32%, white 0%, rgba(255,255,255,0) 35%);
-
-  /* Ez a kulcs: hozzáadja a fényt az alatta lévő zöldhöz */
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
 
 	.lotto-ball:focus {
 		transform: scale(1.1);
