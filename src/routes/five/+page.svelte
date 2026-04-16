@@ -81,7 +81,7 @@
 			>
 				<form onsubmit={sendDataWithForm}>
 					<input
-						class="text-opacity-100 mx-0.5 my-1 max-w-[152.6px] rounded border-2 border-amber-500 font-bold text-white md:mx-0 md:my-0"
+						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
 						type="number"
 						bind:value={first}
 						min={minValue}
@@ -89,7 +89,7 @@
 						required
 					/>
 					<input
-						class="text-opacity-100 mx-0.5 my-1 max-w-[152.6px] rounded border-2 border-amber-500 font-bold text-white md:mx-0 md:my-0"
+						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
 						type="number"
 						bind:value={second}
 						min={minValue}
@@ -97,7 +97,7 @@
 						required
 					/>
 					<input
-						class="text-opacity-100 mx-0.5 my-1 max-w-[152.6px] rounded border-2 border-amber-500 font-bold text-white md:mx-0 md:my-0"
+						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
 						type="number"
 						bind:value={third}
 						min={minValue}
@@ -105,7 +105,7 @@
 						required
 					/>
 					<input
-						class="text-opacity-100 mx-0.5 my-1 max-w-[152.6px] rounded border-2 border-amber-500 font-bold text-white md:mx-0 md:my-0"
+						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
 						type="number"
 						bind:value={fourth}
 						min={minValue}
@@ -113,13 +113,14 @@
 						required
 					/>
 					<input
-						class="text-opacity-100 mx-0.5 my-1 max-w-[152.6px] rounded border-2 border-amber-500 font-bold text-white md:mx-0 md:my-0"
+						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
 						type="number"
 						bind:value={fifth}
 						min={minValue}
 						max={maxValue}
 						required
 					/>
+
 					<div class="mx-0.5 my-1 md:mx-0 md:my-0 md:inline">
 						<button
 							class="max-w-[152.6px] text-2xl font-normal text-white md:text-3xl md:hover:text-black"
@@ -167,3 +168,17 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	/* Eltünteti a nyilakat Chrome, Safari, Edge és Firefox esetén */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+</style>
