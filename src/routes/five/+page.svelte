@@ -56,9 +56,11 @@
 	}
 </script>
 
-{#snippet lottoInput(val: number | undefined, setter: (v: number) => void)}
+{#snippet lottoInput(val: number | undefined, setter: (v: number) => void, num: string)}
 	<input
-		class="lotto-ball"
+		id="ball-{num}"
+		name="ball-{num}"
+		class="lotto-ball dark:lotto-ball2"
 		type="number"
 		value={val}
 		oninput={(e) => setter(Number(e.currentTarget.value))}
@@ -82,11 +84,13 @@
 				class="flex flex-col items-center justify-center text-center font-poppins text-4xl font-bold"
 			>
 				<form onsubmit={sendDataWithForm} class="flex flex-wrap justify-center gap-3">
-					{@render lottoInput(first, (v) => (first = v))}
-					{@render lottoInput(second, (v) => (second = v))}
-					{@render lottoInput(third, (v) => (third = v))}
-					{@render lottoInput(fourth, (v) => (fourth = v))}
-					{@render lottoInput(fifth, (v) => (fifth = v))}
+					<div class="flex flex-wrap justify-center gap-3">
+						{@render lottoInput(first, (v) => (first = v), '1')}
+						{@render lottoInput(second, (v) => (second = v), '2')}
+						{@render lottoInput(third, (v) => (third = v), '3')}
+						{@render lottoInput(fourth, (v) => (fourth = v), '4')}
+						{@render lottoInput(fifth, (v) => (fifth = v), '5')}
+					</div>
 
 					<button
 						class="max-w-[152.6px] text-2xl font-normal text-white md:text-3xl md:hover:text-black"
@@ -148,10 +152,11 @@
 	}
 
 	.lotto-ball {
+		color-scheme: only light !important;
 		aspect-ratio: 1 / 1;
 		height: 4rem;
 		width: 4rem;
-		border-radius: 9999px; /* rounded-full*/
+		border-radius: 9999px;
 		text-align: center;
 		font-weight: bold;
 		color: white !important;
@@ -160,15 +165,11 @@
 		border: none;
 		color-scheme: light !important;
 
-		background:radial-gradient(
-        circle at 32% 32%,
-        rgba(215, 255, 150, 0.9) 0%,   /* Világos mohazöld, magas opacity */
-        rgba(116, 134, 88, 0) 45%     /* Teljesen átlátszóba fut ki */
-      ),
-			/* radial-gradient(circle at 32% 32%, rgba(173, 242, 90, 0.6) 0%, rgba(173, 242, 90, 0.1) 35%),*/
+		background:
+			radial-gradient(circle at 32% 32%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 45%),
 			radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%) !important;
-		background-color: transparent !important;
-		color: white !important;
+
+		color: white;
 
 		box-shadow:
 			inset -3px -3px 10px rgba(0, 0, 0, 0.2),
@@ -177,8 +178,8 @@
 		-webkit-appearance: none;
 		-moz-appearance: textfield;
 		appearance: none;
+		background-color: #07b842 !important;
 	}
-
 
 	.lotto-ball:focus {
 		transform: scale(1.1);
