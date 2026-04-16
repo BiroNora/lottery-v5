@@ -77,48 +77,114 @@
 			</p>
 
 			<div
-				class="flex flex-col items-center justify-center text-center font-poppins text-3xl font-semibold"
+				class="flex flex-col items-center justify-center text-center font-poppins text-4xl font-bold"
 			>
 				<form onsubmit={sendDataWithForm}>
 					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
+						class="no-spinner aspect-square h-16 w-16 rounded-full
+							text-center font-bold text-white shadow-xl
+							transition-all outline-none focus:scale-110"
 						type="number"
 						bind:value={first}
 						min={minValue}
 						max={maxValue}
 						required
+						style="background:
+							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
+
+							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
+
+							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
+
+							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
+							border: none;
+							-webkit-appearance: none;
+						"
 					/>
+
 					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
+						class="no-spinner aspect-square h-16 w-16 rounded-full
+							text-center font-bold text-white shadow-xl
+							transition-all outline-none focus:scale-110"
 						type="number"
 						bind:value={second}
 						min={minValue}
 						max={maxValue}
 						required
+						style="background:
+							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
+
+							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
+
+							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
+
+							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
+							border: none;
+							-webkit-appearance: none;
+						"
 					/>
 					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
+						class="no-spinner aspect-square h-16 w-16 rounded-full
+							text-center font-bold text-white shadow-xl
+							transition-all outline-none focus:scale-110"
 						type="number"
 						bind:value={third}
 						min={minValue}
 						max={maxValue}
 						required
+						style="background:
+							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
+
+							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
+
+							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
+
+							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
+							border: none;
+							-webkit-appearance: none;
+						"
 					/>
 					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
+						class="no-spinner aspect-square h-16 w-16 rounded-full
+							text-center font-bold text-white shadow-xl
+							transition-all outline-none focus:scale-110"
 						type="number"
 						bind:value={fourth}
 						min={minValue}
 						max={maxValue}
 						required
+						style="background:
+							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
+
+							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
+
+							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
+
+							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
+							border: none;
+							-webkit-appearance: none;
+						"
 					/>
 					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full border-4 border-amber-500 text-center font-bold text-white transition-all outline-none focus:border-cyan-600"
+						class="no-spinner aspect-square h-16 w-16 rounded-full
+							text-center font-bold text-white shadow-xl
+							transition-all outline-none focus:scale-110"
 						type="number"
 						bind:value={fifth}
 						min={minValue}
 						max={maxValue}
 						required
+						style="background:
+							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
+
+							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
+
+							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
+
+							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
+							border: none;
+							-webkit-appearance: none;
+						"
 					/>
 
 					<div class="mx-0.5 my-1 md:mx-0 md:my-0 md:inline">
@@ -178,6 +244,16 @@
 	}
 
 	input[type='number'] {
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+
+	.no-spinner::-webkit-inner-spin-button,
+	.no-spinner::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	.no-spinner {
 		-moz-appearance: textfield;
 		appearance: textfield;
 	}
