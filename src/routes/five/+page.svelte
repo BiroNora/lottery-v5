@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { formats, url_router } from '../stores/dataStore';
+	import { formats } from '../stores/dataStore';
 
 	let first = $state<number>();
 	let second = $state<number>();
@@ -16,11 +15,9 @@
 	const minValue = 1;
 	const maxValue = 90;
 	let url = '';
-	let folder_name = $page.url.pathname;
 
 	async function sendDataWithForm(event: Event) {
 		event.preventDefault();
-
 		err_mess = false;
 		no_res = false;
 		show = false;
@@ -34,16 +31,9 @@
 		}
 
 		nums.sort((a, b) => a - b);
-
-		first = nums[0];
-		second = nums[1];
-		third = nums[2];
-		fourth = nums[3];
-		fifth = nums[4];
+		[first, second, third, fourth, fifth] = nums;
 
 		try {
-			url_router(url, folder_name);
-
 			const response = await fetch(url, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -66,6 +56,18 @@
 	}
 </script>
 
+{#snippet lottoInput(val: number | undefined, setter: (v: number) => void)}
+	<input
+		class="lotto-ball"
+		type="number"
+		value={val}
+		oninput={(e) => setter(Number(e.currentTarget.value))}
+		min={minValue}
+		max={maxValue}
+		required
+	/>
+{/snippet}
+
 <div
 	class="h-screen rounded bg-cover bg-center bg-no-repeat pt-12"
 	style="background-image: url('balls100.jpg');"
@@ -79,123 +81,20 @@
 			<div
 				class="flex flex-col items-center justify-center text-center font-poppins text-4xl font-bold"
 			>
-				<form onsubmit={sendDataWithForm}>
-					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full
-							text-center font-bold text-white shadow-xl
-							transition-all outline-none focus:scale-110"
-						type="number"
-						bind:value={first}
-						min={minValue}
-						max={maxValue}
-						required
-						style="background:
-							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
+				<form onsubmit={sendDataWithForm} class="flex flex-wrap justify-center gap-3">
+					{@render lottoInput(first, (v) => (first = v))}
+					{@render lottoInput(second, (v) => (second = v))}
+					{@render lottoInput(third, (v) => (third = v))}
+					{@render lottoInput(fourth, (v) => (fourth = v))}
+					{@render lottoInput(fifth, (v) => (fifth = v))}
 
-							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
-
-							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
-
-							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
-							border: none;
-							-webkit-appearance: none;
-						"
-					/>
-
-					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full
-							text-center font-bold text-white shadow-xl
-							transition-all outline-none focus:scale-110"
-						type="number"
-						bind:value={second}
-						min={minValue}
-						max={maxValue}
-						required
-						style="background:
-							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
-
-							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
-
-							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
-
-							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
-							border: none;
-							-webkit-appearance: none;
-						"
-					/>
-					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full
-							text-center font-bold text-white shadow-xl
-							transition-all outline-none focus:scale-110"
-						type="number"
-						bind:value={third}
-						min={minValue}
-						max={maxValue}
-						required
-						style="background:
-							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
-
-							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
-
-							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
-
-							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
-							border: none;
-							-webkit-appearance: none;
-						"
-					/>
-					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full
-							text-center font-bold text-white shadow-xl
-							transition-all outline-none focus:scale-110"
-						type="number"
-						bind:value={fourth}
-						min={minValue}
-						max={maxValue}
-						required
-						style="background:
-							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
-
-							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
-
-							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
-
-							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
-							border: none;
-							-webkit-appearance: none;
-						"
-					/>
-					<input
-						class="no-spinner aspect-square h-16 w-16 rounded-full
-							text-center font-bold text-white shadow-xl
-							transition-all outline-none focus:scale-110"
-						type="number"
-						bind:value={fifth}
-						min={minValue}
-						max={maxValue}
-						required
-						style="background:
-							radial-gradient(circle at 35% 35%, rgba(255,255,215,0.6) 0%, transparent 25%),
-
-							radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%);
-
-							radial-gradient(circle at 35% 35%, #f59e0b 0%, #b45309 70%, #78350f 100%);
-
-							box-shadow: inset -3px -3px 10px rgba(0,0,0,0.4), 5px 10px 20px rgba(0,0,0,0.3);
-							border: none;
-							-webkit-appearance: none;
-						"
-					/>
-
-					<div class="mx-0.5 my-1 md:mx-0 md:my-0 md:inline">
-						<button
-							class="max-w-[152.6px] text-2xl font-normal text-white md:text-3xl md:hover:text-black"
-							id="btn"
-							type="submit"
-						>
-							Confirm
-						</button>
-					</div>
+					<button
+						class="max-w-[152.6px] text-2xl font-normal text-white md:text-3xl md:hover:text-black"
+						id="btn"
+						type="submit"
+					>
+						Confirm
+					</button>
 				</form>
 			</div>
 
@@ -248,13 +147,64 @@
 		appearance: textfield;
 	}
 
-	.no-spinner::-webkit-inner-spin-button,
-	.no-spinner::-webkit-outer-spin-button {
+	/* .lotto-ball {
+		aspect-ratio: 1 / 1;
+		height: 4rem;
+		width: 4rem;
+		border-radius: 9999px; /* rounded-full
+		text-align: center;
+		font-weight: bold;
+		color: white !important;
+		transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		outline: none;
+		border: none;
+		color-scheme: light !important;
+
+		background:
+			radial-gradient(circle at 32% 32%, rgba(173, 242, 90, 0.6) 0%, rgba(173, 242, 90, 0.1) 35%),
+			radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%) !important;
+		background-color: transparent !important;
+		color: white !important;
+
+		box-shadow:
+			inset -3px -3px 10px rgba(0, 0, 0, 0.4),
+			5px 10px 20px rgba(0, 0, 0, 0.3);
+
 		-webkit-appearance: none;
-		margin: 0;
-	}
-	.no-spinner {
 		-moz-appearance: textfield;
-		appearance: textfield;
+		appearance: none;
+	} */
+	 .lotto-ball {
+  aspect-ratio: 1 / 1;
+		height: 4rem;
+		width: 4rem;
+		border-radius: 9999px;
+		text-align: center;
+		font-weight: bold;
+		color: white !important;
+		transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		outline: none;
+		border: none;
+		color-scheme: light !important;
+  position: relative; /* Kell az utóelemnek */
+  overflow: hidden;
+  background: radial-gradient(circle at 35% 35%, #34f70c 0%, #07b842 70%, #0a6e3a 100%) !important;
+  color-scheme: light;
+}
+
+/* Külön rétegre tesszük a csillanást, amit nem tud sötétíteni a rendszer */
+.lotto-ball::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 32% 32%, white 0%, rgba(255,255,255,0) 35%);
+
+  /* Ez a kulcs: hozzáadja a fényt az alatta lévő zöldhöz */
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+	.lotto-ball:focus {
+		transform: scale(1.1);
 	}
 </style>
