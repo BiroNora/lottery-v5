@@ -49,7 +49,7 @@ body, html {
 
     /* Megjelenés javítása */
     color: white !important;
-    color-scheme: only light !important;
+    color-scheme: light !important;
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;

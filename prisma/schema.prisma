@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Five {
@@ -60,4 +61,21 @@ model Skandi {
   @@index([m_first, m_second, m_third, m_fourth, m_fifth, m_sixth, m_seventh])
   @@index([h_first, h_second, h_third, h_fourth, h_fifth, h_sixth, h_seventh])
   @@map("skandi")
+}
+
+model Euro {
+  eur_id   Int    @id @default(autoincrement())
+  e_year   Int
+  e_week   Int
+  e_total  BigInt
+  e_first  Int
+  e_second Int
+  e_third  Int
+  e_fourth Int
+  e_fifth  Int
+  e_sixth  Int
+  e_seventh Int
+
+  @@index([e_first, e_second, e_third, e_fourth, e_fifth, e_sixth, e_seventh])
+  @@map("euro")
 }

@@ -24,50 +24,58 @@
 			<span
 				class="hidden font-poppins text-lg whitespace-nowrap text-gray-100 sm:inline sm:text-base md:text-xl md:hover:text-purple-300 lg:text-2xl"
 			>
-				See You on Github
+				See You on Git
 			</span>
 		</a>
 		<div>
 			<button
 				onclick={toggleMenu}
 				id="hamburger-button"
-				class="relative h-8 w-8 cursor-pointer text-3xl text-white md:hidden"
+				class="relative h-8 w-8 cursor-pointer text-3xl text-white lg:hidden"
 				type="button"
 			>
 				&#9776;
 			</button>
 
-			<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+			<div class="hidden w-full lg:block md:w-auto" id="navbar-default">
 				<ul
 					class="mt-4 flex flex-col border p-4 text-lg font-light md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse"
 				>
-					<li>
-						<a href="/" class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-slate-200">
+					<li class="nav-container">
+						<a href="/" class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-white hover:font-bold">
 							Home
 						</a>
 					</li>
-					<li>
+					<li class="nav-container">
 						<a
 							href="/five"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-green-200"
+							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-green-400 hover:font-bold"
 						>
 							Pick 5
 						</a>
 					</li>
-					<li>
+					<li class="nav-container">
 						<a
 							href="/six"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-green-200"
+							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-fuchsia-500 hover:font-bold"
 						>
 							Pick 6
 						</a>
 					</li>
-					<li>
+					<li class="nav-container">
 						<a
 							href="/skandi"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-green-200"
+							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-blue-800 hover:font-bold"
 						>
 							Skandi
+						</a>
+					</li>
+					<li class="nav-container">
+						<a
+							href="/euro"
+							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-amber-200 hover:font-bold"
+						>
+							Eurojackpot
 						</a>
 					</li>
 				</ul>
@@ -78,7 +86,7 @@
 
 {#if is_menu_open}
 	<nav
-		class="absolute top-12 z-40 flex w-full origin-top flex-col justify-center rounded bg-cyan-600/80 py-8 font-poppins text-4xl text-white"
+		class="absolute top-12 z-40 flex w-full origin-top flex-col justify-center rounded bg-cyan-300/98 py-8 font-poppins text-4xl text-white"
 		aria-label="mobile"
 	>
 		<ul class="flex min-h-screen flex-col items-center">
@@ -92,7 +100,11 @@
 				<a href="/skandi" onclick={toggleMenu} class="w-full py-6 text-center font-medium">Skandi</a
 				>
 			</li>
-			<li class="pt-10">
+			<li class="pb-7">
+				<a href="/euro" onclick={toggleMenu} class="w-full py-6 text-center font-medium">Eurojackpot</a
+				>
+			</li>
+			<li class="pt-7">
 				<a
 					href="/"
 					onclick={toggleMenu}
@@ -108,3 +120,13 @@
 <main class="rounded">
 	{@render children()}
 </main>
+
+<style>
+  /* A tartály fix szélessége biztosítja a helyet */
+  .nav-container {
+    width: 5.0rem; /* Fix szélesség minden elemnek */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
