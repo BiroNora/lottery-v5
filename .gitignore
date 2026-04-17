@@ -25,3 +25,6 @@ vite.config.ts.timestamp-*
 test-results
 
 /../generated/prisma
+*.ipynb
+!example_notebook.ipynb
+.ipynb_checkpoints/
