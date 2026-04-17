@@ -150,7 +150,7 @@
 							<div class="mb-4 text-center">
 								<p>
 									<span class="text-xl font-normal md:text-2xl">Amount:</span>
-									{formats(lot.e_total)} <span class="text-2xl font-normal"> Ft</span>
+									{formats(lot.e_total)} <span class="text-2xl font-normal"> Euro</span>
 								</p>
 								<p>
 									<span class="text-xl font-normal md:text-2xl">Year/Week:</span>
