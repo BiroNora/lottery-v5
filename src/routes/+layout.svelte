@@ -16,7 +16,7 @@
 <nav class="fixed top-0 left-0 z-50 h-12 w-full rounded bg-cyan-600">
 	<div class="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 		<a
-			href="https://github.com/BiroNora/lottery"
+			href="https://github.com/BiroNora/lottery-v5"
 			target="_blank"
 			class="flex items-center space-x-3 rtl:space-x-reverse"
 		>
