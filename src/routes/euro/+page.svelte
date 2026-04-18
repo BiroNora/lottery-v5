@@ -112,8 +112,8 @@
 						{@render lottoInput(third, (v) => (third = v), '3', mainStarsmax)}
 						{@render lottoInput(fourth, (v) => (fourth = v), '4', mainStarsmax)}
 						{@render lottoInput(fifth, (v) => (fifth = v), '5', mainStarsmax)}
-						
-						<div class="ml-5 flex flex-wrap justify-center gap-3">
+
+						<div class="plus flex flex-wrap justify-center gap-3">
 							{@render lottoInput(sixth, (v) => (sixth = v), '6', euroStarsMax)}
 							{@render lottoInput(seventh, (v) => (seventh = v), '7', euroStarsMax)}
 						</div>
@@ -171,4 +171,11 @@
 			radial-gradient(circle at 32% 32%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 45%),
 			radial-gradient(circle at 35% 35%, #f7e00c 0%, #b89b07 70%, #6e4d0a 100%) !important;
 	}
+
+	@media (min-width: 510px) {
+    .plus {
+      margin-left: 1.0rem;
+      position: relative;
+    }
+  }
 </style>
