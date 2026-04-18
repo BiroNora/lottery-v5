@@ -112,8 +112,8 @@
 						{@render lottoInput(third, (v) => (third = v), '3', mainStarsmax)}
 						{@render lottoInput(fourth, (v) => (fourth = v), '4', mainStarsmax)}
 						{@render lottoInput(fifth, (v) => (fifth = v), '5', mainStarsmax)}
-						<div class="ml-5 flex"></div>
-						<div class="flex flex-wrap justify-center gap-3">
+						
+						<div class="ml-5 flex flex-wrap justify-center gap-3">
 							{@render lottoInput(sixth, (v) => (sixth = v), '6', euroStarsMax)}
 							{@render lottoInput(seventh, (v) => (seventh = v), '7', euroStarsMax)}
 						</div>
