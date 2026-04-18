@@ -174,7 +174,7 @@
 
 	@media (min-width: 510px) {
     .plus {
-      margin-left: 1.0rem;
+      margin-left: 1.5rem;
       position: relative;
     }
   }
