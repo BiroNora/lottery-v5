@@ -42,14 +42,14 @@
 					class="mt-4 flex flex-col border p-4 text-lg font-light md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse"
 				>
 					<li class="nav-container">
-						<a href="/" class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-white hover:font-bold">
+						<a href="/" class="block py-2 font-poppins text-gray-100 md:hover:text-white hover:font-bold">
 							Home
 						</a>
 					</li>
 					<li class="nav-container">
 						<a
 							href="/five"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-green-400 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 md:hover:text-green-400 hover:font-bold"
 						>
 							Pick 5
 						</a>
@@ -57,7 +57,7 @@
 					<li class="nav-container">
 						<a
 							href="/six"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-fuchsia-500 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 md:hover:text-fuchsia-500 hover:font-bold"
 						>
 							Pick 6
 						</a>
@@ -65,15 +65,15 @@
 					<li class="nav-container">
 						<a
 							href="/skandi"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-blue-800 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 md:hover:text-blue-800 hover:font-bold"
 						>
 							Skandi
 						</a>
 					</li>
-					<li class="nav-container">
+					<li class="nav-container wid">
 						<a
 							href="/euro"
-							class="block px-3 py-2 font-poppins text-gray-100 md:hover:text-amber-200 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 md:hover:text-amber-200 hover:font-bold"
 						>
 							Eurojackpot
 						</a>
@@ -124,9 +124,13 @@
 <style>
   /* A tartály fix szélessége biztosítja a helyet */
   .nav-container {
-    width: 5.0rem; /* Fix szélesség minden elemnek */
+    width: 4.0rem; /* Fix szélesség minden elemnek */
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+	.wid {
+		width: 7.5rem;
+	}
 </style>
