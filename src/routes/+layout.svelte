@@ -37,19 +37,22 @@
 				&#9776;
 			</button>
 
-			<div class="hidden w-full lg:block md:w-auto" id="navbar-default">
+			<div class="hidden w-full md:w-auto lg:block" id="navbar-default">
 				<ul
 					class="mt-4 flex flex-col border p-4 text-lg font-light md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse"
 				>
 					<li class="nav-container">
-						<a href="/" class="block py-2 font-poppins text-gray-100 md:hover:text-white hover:font-bold">
+						<a
+							href="/"
+							class="block py-2 font-poppins text-gray-100 hover:font-bold md:hover:text-white"
+						>
 							Home
 						</a>
 					</li>
 					<li class="nav-container">
 						<a
 							href="/five"
-							class="block py-2 font-poppins text-gray-100 md:hover:text-green-400 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 hover:font-bold md:hover:text-green-400"
 						>
 							Pick 5
 						</a>
@@ -57,7 +60,7 @@
 					<li class="nav-container">
 						<a
 							href="/six"
-							class="block py-2 font-poppins text-gray-100 md:hover:text-fuchsia-500 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 hover:font-bold md:hover:text-fuchsia-500"
 						>
 							Pick 6
 						</a>
@@ -65,7 +68,7 @@
 					<li class="nav-container">
 						<a
 							href="/skandi"
-							class="block py-2 font-poppins text-gray-100 md:hover:text-blue-800 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 hover:font-bold md:hover:text-blue-800"
 						>
 							Skandi
 						</a>
@@ -73,7 +76,7 @@
 					<li class="nav-container wid">
 						<a
 							href="/euro"
-							class="block py-2 font-poppins text-gray-100 md:hover:text-amber-200 hover:font-bold"
+							class="block py-2 font-poppins text-gray-100 hover:font-bold md:hover:text-amber-200"
 						>
 							Eurojackpot
 						</a>
@@ -101,7 +104,8 @@
 				>
 			</li>
 			<li class="pb-7">
-				<a href="/euro" onclick={toggleMenu} class="w-full py-6 text-center font-medium">Eurojackpot</a
+				<a href="/euro" onclick={toggleMenu} class="w-full py-6 text-center font-medium"
+					>Eurojackpot</a
 				>
 			</li>
 			<li class="pt-7">
@@ -122,13 +126,13 @@
 </main>
 
 <style>
-  /* A tartály fix szélessége biztosítja a helyet */
-  .nav-container {
-    width: 4.0rem; /* Fix szélesség minden elemnek */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	/* A tartály fix szélessége biztosítja a helyet */
+	.nav-container {
+		width: 4rem; /* Fix szélesség minden elemnek */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	.wid {
 		width: 7.5rem;
