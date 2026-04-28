@@ -15,7 +15,7 @@
 	let show = $state(false);
 
 	const minValue = 1;
-	const maxValue = 45;
+	const maxValue = 35;
 	let url = '';
 
 	async function sendDataWithForm(event: Event) {
