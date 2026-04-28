@@ -6,8 +6,8 @@
 	let third = $state<number>();
 	let fourth = $state<number>();
 	let fifth = $state<number>();
-  let sixth = $state<number>();
-  let seventh = $state<number>();
+	let sixth = $state<number>();
+	let seventh = $state<number>();
 
 	let lotteryData = $state<any[]>([]);
 	let err_mess = $state(false);
@@ -24,7 +24,9 @@
 		no_res = false;
 		show = false;
 
-		const nums = [first, second, third, fourth, fifth, sixth, seventh].filter((n) => n !== undefined) as number[];
+		const nums = [first, second, third, fourth, fifth, sixth, seventh].filter(
+			(n) => n !== undefined
+		) as number[];
 		const uniqueNums = new Set(nums);
 
 		if (nums.length !== 7 || uniqueNums.size !== 7) {
@@ -64,9 +66,9 @@
 		name="ball-{num}"
 		class="lotto-ball"
 		type="number"
-    onkeydown={(e) => ['e', 'E', '+', '-', '.'].includes(e.key) && e.preventDefault()}
+		onkeydown={(e) => ['e', 'E', '+', '-', '.'].includes(e.key) && e.preventDefault()}
 		value={val}
-		oninput={(e) => setter(Number(e.currentTarget.value = e.currentTarget.value.slice(0, 2)))}
+		oninput={(e) => setter(Number((e.currentTarget.value = e.currentTarget.value.slice(0, 2))))}
 		min={minValue}
 		max={maxValue}
 		required
@@ -93,8 +95,8 @@
 						{@render lottoInput(third, (v) => (third = v), '3')}
 						{@render lottoInput(fourth, (v) => (fourth = v), '4')}
 						{@render lottoInput(fifth, (v) => (fifth = v), '5')}
-            {@render lottoInput(sixth, (v) => (sixth = v), '6')}
-            {@render lottoInput(seventh, (v) => (seventh = v), '7')}
+						{@render lottoInput(sixth, (v) => (sixth = v), '6')}
+						{@render lottoInput(seventh, (v) => (seventh = v), '7')}
 					</div>
 
 					<button
@@ -148,5 +150,6 @@
 		background:
 			radial-gradient(circle at 32% 32%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 45%),
 			radial-gradient(circle at 35% 35%, #0cb8f7 0%, #0760b8 70%, #0a266e 100%) !important;
+		color: rgba(255, 255, 255, 0.9);
 	}
 </style>

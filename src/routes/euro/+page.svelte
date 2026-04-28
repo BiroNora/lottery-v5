@@ -74,7 +74,12 @@
 	}
 </script>
 
-{#snippet lottoInput(val: number | undefined, setter: (v: number) => void, num: string, maxVal: number)}
+{#snippet lottoInput(
+	val: number | undefined,
+	setter: (v: number) => void,
+	num: string,
+	maxVal: number
+)}
 	<input
 		id="ball-{num}"
 		name="ball-{num}"
@@ -82,9 +87,9 @@
 		type="number"
 		onkeydown={(e) => ['e', 'E', '+', '-', '.'].includes(e.key) && e.preventDefault()}
 		value={val}
-		oninput={(e) => setter(Number(e.currentTarget.value = e.currentTarget.value.slice(0, 2)))}
-    min={minValue}
-    max={maxVal}
+		oninput={(e) => setter(Number((e.currentTarget.value = e.currentTarget.value.slice(0, 2))))}
+		min={minValue}
+		max={maxVal}
 		required
 	/>
 {/snippet}
@@ -173,9 +178,9 @@
 	}
 
 	@media (min-width: 510px) {
-    .plus {
-      margin-left: 1.5rem;
-      position: relative;
-    }
-  }
+		.plus {
+			margin-left: 1.5rem;
+			position: relative;
+		}
+	}
 </style>
