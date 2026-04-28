@@ -25,18 +25,23 @@
 		no_res = false;
 		show = false;
 
-		const nums = [first, second, third, fourth, fifth, sixth, seventh].filter(
-			(n) => n !== undefined
-		) as number[];
+		const nums = [first, second, third, fourth, fifth].filter((n) => n !== undefined) as number[];
 		const uniqueNums = new Set(nums);
 
-		if (nums.length !== 7 || uniqueNums.size !== 7) {
+		const numsSec = [sixth, seventh].filter((n) => n !== undefined && n !== null) as number[];
+
+		if (
+			nums.length !== 5 ||
+			uniqueNums.size !== 5 ||
+			numsSec.length !== 2 ||
+			numsSec[0] === numsSec[1]
+		) {
 			err_mess = true;
 			return;
 		}
 
-		const mainStars = nums.slice(0, 5).sort((a, b) => a - b);
-		const euroStars = nums.slice(5, 7).sort((a, b) => a - b);
+		const mainStars = nums.sort((a, b) => a - b);
+		const euroStars = numsSec.sort((a, b) => a - b);
 
 		const sortedNums = [...mainStars, ...euroStars];
 		[first, second, third, fourth, fifth, sixth, seventh] = sortedNums;
@@ -47,8 +52,8 @@
 			third: mainStars[2],
 			fourth: mainStars[3],
 			fifth: mainStars[4],
-			sixth: euroStars[0], // Ez lesz az e_sixth
-			seventh: euroStars[1] // Ez lesz az e_seventh
+			sixth: euroStars[0],
+			seventh: euroStars[1]
 		});
 
 		try {
