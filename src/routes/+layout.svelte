@@ -89,30 +89,30 @@
 
 {#if is_menu_open}
 	<nav
-		class="absolute top-12 z-40 flex w-full origin-top flex-col justify-center rounded bg-cyan-300/98 py-8 font-poppins text-4xl text-white"
+		class="absolute top-12 z-40 flex w-full origin-top flex-col justify-center rounded
+		 bg-gray-300/98 bg-cover bg-center bg-no-repeat py-8 font-poppins
+		 text-4xl font-semibold tracking-tight text-white"
+		style="background-image: url('/1000balls.png');"
 		aria-label="mobile"
 	>
 		<ul class="flex min-h-screen flex-col items-center">
 			<li class="pt-6 pb-7">
-				<a onclick={toggleMenu} href="/five" class="w-full py-6 text-center font-medium">Pick 5</a>
+				<a onclick={toggleMenu} href="/five" class="shade w-full py-6 text-center">Pick 5</a>
 			</li>
 			<li class="pb-7">
-				<a onclick={toggleMenu} href="/six" class="w-full py-6 text-center font-medium">Pick 6</a>
+				<a onclick={toggleMenu} href="/six" class="shade w-full py-6 text-center">Pick 6</a>
 			</li>
 			<li class="pb-7">
-				<a href="/skandi" onclick={toggleMenu} class="w-full py-6 text-center font-medium">Skandi</a
-				>
+				<a href="/skandi" onclick={toggleMenu} class="shade w-full py-6 text-center">Skandi</a>
 			</li>
 			<li class="pb-7">
-				<a href="/euro" onclick={toggleMenu} class="w-full py-6 text-center font-medium"
-					>Eurojackpot</a
-				>
+				<a href="/euro" onclick={toggleMenu} class="shade w-full py-6 text-center">Eurojackpot</a>
 			</li>
 			<li class="pt-7">
 				<a
 					href="/"
 					onclick={toggleMenu}
-					class="w-full py-8 text-center text-5xl font-bold text-red-600"
+					class="shade w-full py-8 text-center text-5xl font-bold text-cyan-300"
 				>
 					Home
 				</a>
@@ -136,5 +136,9 @@
 
 	.wid {
 		width: 7.5rem;
+	}
+
+	.shade {
+		text-shadow: 2px 2px 4px rgba(45, 9, 9, 0.937);
 	}
 </style>
