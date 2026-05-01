@@ -48,9 +48,8 @@ input[type='number'] {
 	border-color: white;
 	transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
-	/* Megjrgba(33, 31, 5, 0.7)*/
-	color: rgba(33, 31, 5, 0.7);
-	text-shadow: -0.5px -0.5px 0.5px rgba(165, 181, 167, 0.7);
+	/* Megjelenés javítása */
+	color: rgba(54, 51, 4, 0.7);
 	color-scheme: light !important;
 	-webkit-appearance: none;
 	-moz-appearance: textfield;
