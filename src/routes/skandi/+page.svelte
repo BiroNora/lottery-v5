@@ -150,6 +150,7 @@
 		background:
 			radial-gradient(circle at 32% 32%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 45%),
 			radial-gradient(circle at 35% 35%, #0cb8f7 0%, #0760b8 70%, #0a266e 100%) !important;
-		color: rgba(255, 255, 255, 0.9);
+		color: rgba(230, 230, 230, 0.7);
+		text-shadow: -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.7);
 	}
 </style>
