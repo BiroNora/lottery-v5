@@ -40,3 +40,10 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+
+## 🧪 Tesztautomatizálás (QA)
+A projekt teljes körű End-to-End teszteléssel van biztosítva Playwright és TypeScript segítségével.
+A tesztek futtatásához:
+1. `pnpm install` vagy `npm install`
+2. `npx playwright test`
